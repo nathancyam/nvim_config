@@ -143,9 +143,12 @@ let g:neoterm_autoscroll = 1
 let g:neoterm_repl_ruby = 'pry'
 let g:neoterm_keep_term_open = 1
 
-nnoremap <silent> <leader>th :call neoterm#close()<CR>
-nnoremap <silent> <leader>tl :call neoterm#clear()<CR>
-nnoremap <silent> <leader>tk :call neoterm#kill()<CR>
+"nnoremap <silent> <leader>th :call neoterm#close()<CR>
+"nnoremap <silent> <leader>tl :call neoterm#clear()<CR>
+"nnoremap <silent> <leader>tk :call neoterm#kill()<CR>
+nnoremap <silent> <leader>th :Tclose<CR>
+nnoremap <silent> <leader>tl :Tclear<CR>
+nnoremap <silent> <leader>tk :Tkill<CR>
 tmap <silent> <C-e> <C-\><C-n>
 
 "
