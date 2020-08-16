@@ -1,0 +1,6 @@
+*.pyc
+plugged
+undo
+.netrwhist
+pythonx/.cache
+lastfailed
