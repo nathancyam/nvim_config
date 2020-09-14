@@ -93,6 +93,9 @@ set listchars+=extends:#
 set listchars+=nbsp:•
 autocmd filetype html,xml set listchars-=tab:>. " ... except for some file types
 
+" Font face
+set guifont=JetBrains\ Mono\ Regular:h16
+
 set re=1
 
 " when editing a file, always jump to the last known cursor position

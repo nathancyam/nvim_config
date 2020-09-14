@@ -9,6 +9,7 @@ Plug 'aradunovic/perun.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox'
 
 " UI Features
 Plug 'preservim/nerdtree'
@@ -464,8 +465,9 @@ let g:molokai_original=1
 let g:solarized_termcolors=256
 let g:auto_save = 1
 
-colorscheme perun
+"colorscheme perun
 set termguicolors
+colorscheme base16-tomorrow-night-eighties
 
 autocmd User ProjectionistDetect
 \ call projectionist#append(getcwd(),
