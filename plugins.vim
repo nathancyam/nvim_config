@@ -433,6 +433,10 @@ nmap <leader>rn <Plug>(coc-rename)
 
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
+" coc window scrolling
+nnoremap <expr><C-[> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-[>"
+nnoremap <expr><C-]> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-]>"
+
 "
 " coc-fzf
 "
