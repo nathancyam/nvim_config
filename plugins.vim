@@ -132,10 +132,6 @@ map <silent> <c-b> :Bookmark<CR>
 let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
 
 "
-" vim-emmet
-"
-
-"
 " neoterm
 "
 let g:neoterm_size='70'
@@ -144,10 +140,7 @@ let g:neoterm_autoscroll = 1
 let g:neoterm_repl_ruby = 'pry'
 let g:neoterm_keep_term_open = 1
 
-"nnoremap <silent> <leader>th :call neoterm#close()<CR>
-"nnoremap <silent> <leader>tl :call neoterm#clear()<CR>
-"nnoremap <silent> <leader>tk :call neoterm#kill()<CR>
-nnoremap <silent> <leader>th :Tclose<CR>
+nnoremap <silent> <leader>tt :Ttoggle<CR>
 nnoremap <silent> <leader>tl :Tclear<CR>
 nnoremap <silent> <leader>tk :Tkill<CR>
 tmap <silent> <C-e> <C-\><C-n>
@@ -434,8 +427,8 @@ nmap <leader>rn <Plug>(coc-rename)
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
 
 " coc window scrolling
-nnoremap <expr><C-[> coc#util#has_float() ? coc#util#float_scroll(1) : "\<C-[>"
-nnoremap <expr><C-]> coc#util#has_float() ? coc#util#float_scroll(0) : "\<C-]>"
+nnoremap <expr><C-[> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-[>"
+nnoremap <expr><C-]> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-]>"
 
 "
 " coc-fzf
