@@ -5,7 +5,6 @@ filetype off
 
 " Theme
 Plug 'altercation/vim-colors-solarized'
-Plug 'aradunovic/perun.vim'
 Plug 'chriskempson/base16-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'dracula/vim', { 'as': 'dracula' }
@@ -462,7 +461,6 @@ let g:molokai_original=1
 let g:solarized_termcolors=256
 let g:auto_save = 1
 
-"colorscheme perun
 set termguicolors
 colorscheme base16-tomorrow-night-eighties
 

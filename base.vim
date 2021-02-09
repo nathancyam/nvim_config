@@ -70,7 +70,7 @@ set gdefault      " use /g (replace all on line instead of first) by default
 
 " text wrap
 set formatoptions=qrn1
-set colorcolumn=80
+set colorcolumn=100
 
 " undo buffer
 set history=50          " remember more commands and search history
@@ -109,6 +109,8 @@ autocmd BufReadPost *
 set ttimeoutlen=50
 
 set updatetime=2000
+
+let g:python3_host_prog='/usr/local/bin/python3'
 
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =
