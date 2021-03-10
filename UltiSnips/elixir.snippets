@@ -58,13 +58,20 @@ endsnippet
 
 snippet conncase "conn test case"
 defmodule `!p ex_module_name(path, snip)` do
-	use `!p ex_project_name(snip)`.Web.ConnCase
+	use `!p ex_project_name(snip)`Web.ConnCase
 
 	alias `!p ex_module_name(path, snip)`
 
 	import `!p ex_project_name(snip)`.Factory
 
 	$0
+end
+endsnippet
+
+snippet livetest "live test" do
+defmodule `!p ex_module_name(path, snip)` do
+	use `!p ex_project_name(snip)`Web.ConnCase
+	import Phoenix.LiveViewTest
 end
 endsnippet
 
