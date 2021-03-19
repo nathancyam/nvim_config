@@ -78,7 +78,7 @@ Plug 'leafgarland/typescript-vim', { 'for': ['typescript'] }
 Plug 'Quramy/tsuquyomi', { 'for': ['typescript'] }
 
 " HTML
-Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript', 'javascript.jsx', 'typescript', 'javascript.tsx'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript', 'javascript.jsx', 'typescript', 'javascript.tsx', 'elixir', 'leex', 'eex', 'elixir-eex'] }
 
 " JSON
 Plug 'elzr/vim-json',    { 'for': 'json' }
