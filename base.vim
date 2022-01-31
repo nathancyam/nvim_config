@@ -110,7 +110,7 @@ set ttimeoutlen=50
 
 set updatetime=2000
 
-let g:python3_host_prog='/usr/local/bin/python3'
+let g:python3_host_prog='/usr/bin/python3'
 
 " automatically rebalance windows on vim resize
 autocmd VimResized * :wincmd =

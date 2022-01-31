@@ -21,3 +21,7 @@ def test_ex_module_name():
     path = "test/some_app/models/user_test.exs"
     ex_module_name(path, snip)
     assert snip.rv == "SomeApp.UserTest"
+
+    path = "lib/some_app_web/live/mod_live/index.ex"
+    ex_module_name(path, snip)
+    assert snip.tv == "SomeApp.ModLive.Index"

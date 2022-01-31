@@ -6,7 +6,7 @@ def ex_path_without_first_dir(path):
 
 def ex_module_name(path, snip):
     separator = "."
-    blacklist = ["apps", "lib", "test", "models", "controllers", "services"]
+    blacklist = ["apps", "lib", "test", "models", "controllers", "services", "live"]
     prefix = path_as_class_name(current_project_name())
     snip.rv = path_as_class_name(path, separator, blacklist)
 

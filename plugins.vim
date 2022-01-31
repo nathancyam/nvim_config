@@ -100,7 +100,7 @@ filetype plugin indent on
 "
 map <C-n> :NERDTree<CR>
 map <C-m> :NERDTreeFind<CR>
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git$', '\.hg', '\.svn', '\.bzr', '\.meta', '\.asmdef', '_build', '.elixir_ls', '.DS_Store']
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git$', '\.hg', '\.svn', '\.bzr', '\.meta', '\.asmdef', '_build', '.elixir_ls', '.DS_Store', 'node_modules']
 let NERDTreeQuitOnOpen=1
 let NERDTreeMouseMode=2
 let NERDTreeKeepTreeInNewTab=1
