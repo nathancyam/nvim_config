@@ -36,16 +36,25 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-projectionist'
+
 Plug 'SirVer/ultisnips'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+
 Plug 'Raimondi/delimitMate'
 Plug 'easymotion/vim-easymotion'
 Plug 'kana/vim-textobj-user'
 Plug 'andymass/vim-matchup'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'embear/vim-localvimrc'
+
+" LSP
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
-Plug 'antoinemadec/coc-fzf'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
 
 " Navigation
 Plug 'haya14busa/incsearch.vim'
@@ -68,7 +77,6 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 " Elixir
 Plug 'elixir-lang/vim-elixir', { 'for': ['elixir', 'eelixir'] }
 Plug 'tpope/vim-endwise',    { 'for': ['ruby', 'elixir'] }
-" Plug 'amiralies/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
 " JS
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
