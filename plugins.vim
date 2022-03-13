@@ -44,7 +44,7 @@ Plug 'andymass/vim-matchup'
 Plug 'AndrewRadev/splitjoin.vim'
 Plug 'embear/vim-localvimrc'
 Plug 'neovim/nvim-lspconfig'
-" Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'williamboman/nvim-lsp-installer'
 Plug 'antoinemadec/coc-fzf'
 
 " Navigation
