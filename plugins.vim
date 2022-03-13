@@ -79,7 +79,7 @@ Plug 'leafgarland/typescript-vim', { 'for': ['typescript'] }
 Plug 'Quramy/tsuquyomi', { 'for': ['typescript'] }
 
 " HTML
-Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript', 'javascript.jsx', 'typescript', 'javascript.tsx'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'javascript', 'javascript.jsx', 'typescript', 'javascript.tsx', 'elixir', 'leex', 'heex', 'eex', 'elixir-eex'] }
 
 " JSON
 Plug 'elzr/vim-json',    { 'for': 'json' }
@@ -101,7 +101,7 @@ filetype plugin indent on
 "
 map <C-n> :NERDTree<CR>
 map <C-m> :NERDTreeFind<CR>
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git$', '\.hg', '\.svn', '\.bzr', '\.meta', '\.asmdef', '_build', '.elixir_ls']
+let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git$', '\.hg', '\.svn', '\.bzr', '\.meta', '\.asmdef', '_build', '.elixir_ls', '.DS_Store', 'node_modules']
 let NERDTreeQuitOnOpen=1
 let NERDTreeMouseMode=2
 let NERDTreeKeepTreeInNewTab=1
@@ -113,7 +113,7 @@ let g:NERDTreeShowHidden=1
 let g:nerdtree_tabs_open_on_gui_startup=0
 let g:NERDTreeMapOpenVSplit="v"
 let g:NERDTreeMapOpenSplit="s"
-let g:NERDTreeWinPos = "left"
+let g:NERDTreeWinPos = "right"
 let g:NERDTreeShowLineNumbers = 1
 let g:NERDTreeAutoDeleteBuffer = 1
 let g:NERDTreeMinimalUI = 1
