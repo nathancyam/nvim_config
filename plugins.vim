@@ -181,19 +181,12 @@ map <leader>gw :Gbrowse<CR>
 "
 " lightline
 "
-function! CocCurrentFunction()
-    return get(b:, 'coc_current_function', '')
-endfunction
 
 let g:lightline = {
   \ 'separator': { 'left': '', 'right': '' },
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
-  \             [ 'cocstatus', 'currentfunction', 'readonly', 'filename', 'modified' ] ]
-  \ },
-  \ 'component_function': {
-  \   'cocstatus': 'coc#status',
-  \   'currentfunction': 'CocCurrentFunction'
+  \             [ 'currentfunction', 'readonly', 'filename', 'modified' ] ]
   \ },
   \ }
 
@@ -233,6 +226,7 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 let $FZF_DEFAULT_OPTS='--layout=reverse --bind ctrl-a:select-all'
 autocmd! FileType fzf
 autocmd  FileType fzf set nonu nornu
+autocmd FileType elixir let b:surrond_45 = "do \r end"
 
 nmap <C-p> :FzfFiles<CR>
 nmap <C-f> :FzfRg<CR>
@@ -394,31 +388,17 @@ let g:OmniSharp_highlight_types = 1
 " Removing this option bumps into this issue: https://github.com/OmniSharp/omnisharp-vim/issues/398
 let g:OmniSharp_port = 2000
 
-"
-" coc.nvim
-"
-" Use tab for trigger completion with characters ahead and navigate.
-" inoremap <silent><expr> <Tab>
-"       \ pumvisible() ? "\<C-n>" :
-"       \ <SID>check_back_space() ? "\<TAB>" :
-"       \ coc#refresh()
-" inoremap <silent><expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<C-h>"
-
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
 " GoTo code navigation.
-" nmap <silent> gd <Plug>(coc-definition)
 nnoremap <silent> gd <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> gD <cmd>lua vim.lsp.buf.implementation()<CR>
 nnoremap <silent> gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap <silent> K <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap <silent> gy <cmd>lua vim.lsp.buf.type_definition()<CR>
-" nmap <silent> gy <Plug>(coc-type-definition)
-" nmap <silent> gi <Plug>(coc-implementation)
-" nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
 " nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -430,10 +410,6 @@ nnoremap <silent> gy <cmd>lua vim.lsp.buf.type_definition()<CR>
 " nmap <leader>rn <Plug>(coc-rename)
 
 autocmd User CocStatusChange,CocDiagnosticChange call lightline#update()
-
-" coc window scrolling
-nnoremap <expr><C-[> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-[>"
-nnoremap <expr><C-]> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-]>"
 
 "
 " coc-fzf
