@@ -17,6 +17,11 @@ return {
       colorscheme = "kanagawa",
     },
   },
+  { "jfpedroza/neotest-elixir" },
+  {
+    "nvim-neotest/neotest",
+    opts = { adapters = { "neotest-elixir" } },
+  },
   {
     "tpope/vim-projectionist",
     config = function()
@@ -55,7 +60,7 @@ return {
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         lexical = {
-          cmd = { "/Users/nathanyam/tools/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
+          cmd = { os.getenv("HOME") .. "/tools/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
           root_dir = function(fname)
             local lspconfig = require("lspconfig")
             return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd()
