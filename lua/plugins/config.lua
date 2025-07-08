@@ -22,7 +22,11 @@ return {
     "nvim-neotest/neotest",
     opts = {
       adapters = {
-        "neotest-elixir"
+        ["neotest-elixir"] = {
+          post_process_command = function(cmd)
+            return vim.iter({{"docker-compose", "-f", "/Users/nathan/code/super_api/docker-compose.yml", "-f", "/Users/nathan/code/super_api/docker-compose.base.yml", "-f", "/Users/nathan/code/docker-compose.shared.yml", "exec", "super-api", "./entrypoint.sh"}, cmd}):flatten():totable()
+          end,
+        }
       }
     },
   },
@@ -45,6 +49,8 @@ return {
     lazy = false,
   },
 
+  { "Olical/conjure" },
+
   -- change trouble config
   {
     "folke/trouble.nvim",
@@ -52,7 +58,6 @@ return {
     opts = { use_diagnostic_signs = true },
   },
 
-  -- disable trouble
   { "folke/trouble.nvim", enabled = true },
 
   {
@@ -65,12 +70,10 @@ return {
     end,
   },
 
-  -- add pyright to lspconfig
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
-      ---@type lspconfig.options
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         lexical = {
@@ -86,6 +89,7 @@ return {
       },
     },
   },
+
   { "github/copilot.vim" },
 
   -- add more treesitter parsers
