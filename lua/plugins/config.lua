@@ -20,7 +20,15 @@ return {
   { "jfpedroza/neotest-elixir" },
   {
     "nvim-neotest/neotest",
-    opts = { adapters = { "neotest-elixir" } },
+    opts = {
+      adapters = {
+        ["neotest-elixir"] = {
+          post_process_command = function(cmd)
+            return vim.iter({{"docker-compose", "-f", "/Users/nathan/code/super_api/docker-compose.yml", "-f", "/Users/nathan/code/super_api/docker-compose.base.yml", "-f", "/Users/nathan/code/docker-compose.shared.yml", "exec", "super-api", "./entrypoint.sh"}, cmd}):flatten():totable()
+          end,
+        }
+      }
+    },
   },
   {
     "tpope/vim-projectionist",
@@ -41,6 +49,8 @@ return {
     lazy = false,
   },
 
+  { "Olical/conjure" },
+
   -- change trouble config
   {
     "folke/trouble.nvim",
@@ -48,15 +58,22 @@ return {
     opts = { use_diagnostic_signs = true },
   },
 
-  -- disable trouble
-  { "folke/trouble.nvim", enabled = false },
+  { "folke/trouble.nvim", enabled = true },
 
-  -- add pyright to lspconfig
+  {
+    's1n7ax/nvim-window-picker',
+    name = 'window-picker',
+    event = 'VeryLazy',
+    version = '2.*',
+    config = function()
+        require'window-picker'.setup()
+    end,
+  },
+
   {
     "neovim/nvim-lspconfig",
     ---@class PluginLspOpts
     opts = {
-      ---@type lspconfig.options
       servers = {
         -- pyright will be automatically installed with mason and loaded with lspconfig
         lexical = {
@@ -72,6 +89,7 @@ return {
       },
     },
   },
+
   { "github/copilot.vim" },
 
   -- add more treesitter parsers
