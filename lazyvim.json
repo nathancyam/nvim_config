@@ -1,9 +1,7 @@
 {
   "extras": [
-    "lazyvim.plugins.extras.lang.clojure",
-    "lazyvim.plugins.extras.test.core"
+
   ],
-  "install_version": 7,
   "news": {
     "NEWS.md": "10960"
   },

@@ -17,6 +17,7 @@ return {
       colorscheme = "kanagawa",
     },
   },
+  { "nvim-neotest/nvim-nio" },
   { "jfpedroza/neotest-elixir" },
   {
     "nvim-neotest/neotest",
