@@ -76,21 +76,6 @@ return {
     ---@class PluginLspOpts
     opts = {
       servers = {
-        -- expert = {
-        --   cmd = { 'expert' },
-        --   root_markers = { 'mix.exs', '.git' },
-        --   filetypes = { 'elixir', 'eelixir', 'heex' },
-        -- },
-        -- lexical = {
-        --   cmd = { os.getenv("HOME") .. "/tools/lexical/_build/dev/package/lexical/bin/start_lexical.sh" },
-        --   root_dir = function(fname)
-        --     local lspconfig = require("lspconfig")
-        --     return lspconfig.util.root_pattern("mix.exs", ".git")(fname) or vim.loop.cwd()
-        --   end,
-        --   filetypes = { "elixir", "eelixir", "heex" },
-        --   -- optional settings
-        --   settings = {},
-        -- },
       },
       setup = {
         expert = function (_, _)
