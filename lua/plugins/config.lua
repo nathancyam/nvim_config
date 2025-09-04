@@ -17,20 +17,6 @@ return {
       colorscheme = "kanagawa",
     },
   },
-  { "nvim-neotest/nvim-nio" },
-  { "jfpedroza/neotest-elixir" },
-  {
-    "nvim-neotest/neotest",
-    opts = {
-      adapters = {
-        ["neotest-elixir"] = {
-          post_process_command = function(cmd)
-            return vim.iter({{"docker-compose", "-f", "/Users/nathan/code/super_api/docker-compose.yml", "-f", "/Users/nathan/code/super_api/docker-compose.base.yml", "-f", "/Users/nathan/code/docker-compose.shared.yml", "exec", "super-api", "./entrypoint.sh"}, cmd}):flatten():totable()
-          end,
-        }
-      }
-    },
-  },
   {
     "tpope/vim-projectionist",
     config = function()
@@ -53,13 +39,11 @@ return {
   { "Olical/conjure" },
 
   -- change trouble config
-  {
-    "folke/trouble.nvim",
-    -- opts will be merged with the parent spec
-    opts = { use_diagnostic_signs = true },
-  },
-
-  { "folke/trouble.nvim", enabled = true },
+  -- {
+  --   "folke/trouble.nvim",
+  --   -- opts will be merged with the parent spec
+  --   opts = { use_diagnostic_signs = true },
+  -- },
 
   {
     's1n7ax/nvim-window-picker',
@@ -77,17 +61,17 @@ return {
     opts = {
       servers = {
       },
-      setup = {
-        expert = function (_, _)
-          vim.lsp.config('expert', {
-            cmd = { 'expert' },
-            root_markers = { 'mix.exs', '.git' },
-            filetypes = { 'elixir', 'eelixir', 'heex' },
-          })
-
-          vim.lsp.enable 'expert'
-        end,
-      },
+      -- setup = {
+      --   expert = function (_, _)
+      --     vim.lsp.config('expert', {
+      --       cmd = { 'expert' },
+      --       root_markers = { 'mix.exs', '.git' },
+      --       filetypes = { 'elixir', 'eelixir', 'heex' },
+      --     })
+      --
+      --     vim.lsp.enable 'expert'
+      --   end,
+      -- },
     },
   },
 
