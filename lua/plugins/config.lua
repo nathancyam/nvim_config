@@ -61,17 +61,17 @@ return {
     opts = {
       servers = {
       },
-      -- setup = {
-      --   expert = function (_, _)
-      --     vim.lsp.config('expert', {
-      --       cmd = { 'expert' },
-      --       root_markers = { 'mix.exs', '.git' },
-      --       filetypes = { 'elixir', 'eelixir', 'heex' },
-      --     })
-      --
-      --     vim.lsp.enable 'expert'
-      --   end,
-      -- },
+      setup = {
+        expert = function (_, _)
+          vim.lsp.config('expert', {
+            cmd = { 'expert' },
+            root_markers = { 'mix.exs', '.git' },
+            filetypes = { 'elixir', 'eelixir', 'heex' },
+          })
+
+          vim.lsp.enable 'expert'
+        end,
+      },
     },
   },
 
