@@ -30,6 +30,14 @@ return {
             alternate = "lib/{}.ex",
             type = "test",
           },
+          ["src/*.clj"] = {
+            alternate = "test/{}_test.clj",
+            type = "source",
+          },
+          ["test/*_test.clj"] = {
+            alternate = "src/{}.clj",
+            type = "test",
+          },
         },
       }
     end,
@@ -60,17 +68,16 @@ return {
     ---@class PluginLspOpts
     opts = {
       servers = {
+        ["expert"] = {
+          cmd = { 'expert', '--stdio' },
+          root_markers = { 'mix.exs', '.git' },
+          filetypes = { 'elixir', 'eelixir', 'heex' },
+        },
+        ["tailwindcss"] = {
+          filetypes_include = { "html", "heex", "eelixir" },
+        }
       },
       setup = {
-        expert = function (_, _)
-          vim.lsp.config('expert', {
-            cmd = { 'expert' },
-            root_markers = { 'mix.exs', '.git' },
-            filetypes = { 'elixir', 'eelixir', 'heex' },
-          })
-
-          vim.lsp.enable 'expert'
-        end,
       },
     },
   },
