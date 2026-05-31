@@ -44,8 +44,6 @@ return {
     lazy = false,
   },
 
-  { "Olical/conjure" },
-
   -- change trouble config
   -- {
   --   "folke/trouble.nvim",
@@ -61,39 +59,5 @@ return {
     config = function()
         require'window-picker'.setup()
     end,
-  },
-
-  {
-    "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
-    opts = {
-      servers = {
-        ["expert"] = {
-          cmd = { 'expert', '--stdio' },
-          root_markers = { 'mix.exs', '.git' },
-          filetypes = { 'elixir', 'eelixir', 'heex' },
-        },
-        ["tailwindcss"] = {
-          filetypes_include = { "html", "heex", "eelixir" },
-        }
-      },
-      setup = {
-      },
-    },
-  },
-
-  { "github/copilot.vim" },
-
-  -- add more treesitter parsers
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "elixir",
-        "eex",
-        "heex",
-        "html",
-      },
-    },
   },
 }
